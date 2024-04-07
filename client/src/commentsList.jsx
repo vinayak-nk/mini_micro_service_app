@@ -1,7 +1,8 @@
-import { useState, useEffect, useCallback } from 'react'
-import axios from "axios";
+// import { useState, useEffect, useCallback } from 'react'
+// import axios from "axios";
 
-function CommentsList({ postId }) {
+function CommentsList({ comments }) {
+  /*
   const [comments, setComments] = useState([])
   
   const fetchComments = useCallback(async () => {
@@ -17,7 +18,7 @@ function CommentsList({ postId }) {
   useEffect(() => {
     fetchComments()
   }, [fetchComments]);
-
+  */
   return (
     <div>
       <h5>Comments</h5>

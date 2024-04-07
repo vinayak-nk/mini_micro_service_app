@@ -7,7 +7,7 @@ function PostList() {
   const [posts, setPosts] = useState([])
   
   const fetchPosts = async () => {
-    const URL = 'http://localhost:4000/posts'
+    const URL = 'http://localhost:4002/posts'
     try {
       const response = await axios.get(URL);
       setPosts(response.data);
@@ -28,7 +28,7 @@ function PostList() {
           <div className='card' style={{ width: '30%', marginBottom: '20px' }} key={key}>
             <div className="card-body">
               <h3>{posts[key].title}</h3>
-              <CommentsList postId={key} />
+              <CommentsList comments={posts[key].comments} />
               <CommentCreate postId={key} />
             </div>
           </div>
