@@ -14,22 +14,26 @@ app.get('/posts', (req, res) => {
 })
 
 app.post('/events', (req, res) => {
+  console.log(`QUERY - Received event: ${req.body.type}`)
   const { type, data } = req.body
+  const { commentId, content, postId, status } = data
+  const post = posts[postId]
   switch (type) {
     case 'PostCreated':
       const { id, title } = data
       posts[id] = { id, title, comments: [] }
       break;
     case 'CommentCreated':
-      const { commentId, content, postId } = data
-      const post = posts[postId]
-      post.comments.push({ commentId, content })
-      // posts[postId] = post
+      post.comments.push({ commentId, content, status })
       break;
+    case 'CommentUpdated':
+      const comment = post.comments.find(c => c.commentId === commentId)
+      comment.status = status
+      comment.content = content
+      break
     default:
       break;
   }
-  console.log('posts==', JSON.stringify(posts))
   res.send({})
 })
 
