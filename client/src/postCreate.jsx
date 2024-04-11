@@ -5,10 +5,11 @@ import axios from "axios";
 import './App.css'
 const CommentsCreate = () => {
   const [title, setTitle] = useState('')
+  const domain = 'post.com'
 
   const onSubmit = async (event) => {
     event.preventDefault()
-    const URL = 'http://localhost:4000/posts'
+    const URL = `http://${domain}/posts/create`
     const body = { title }
     await axios.post(URL, body)
 

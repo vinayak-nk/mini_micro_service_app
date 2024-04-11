@@ -5,9 +5,10 @@ import CommentsList from './commentsList';
 
 function PostList() {
   const [posts, setPosts] = useState([])
+  const domain = 'post.com'
   
   const fetchPosts = async () => {
-    const URL = 'http://localhost:4002/posts'
+    const URL = `http://${domain}/posts`
     try {
       const response = await axios.get(URL);
       setPosts(response.data);

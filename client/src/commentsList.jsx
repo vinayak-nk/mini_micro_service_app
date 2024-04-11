@@ -2,23 +2,6 @@
 // import axios from "axios";
 
 function CommentsList({ comments }) {
-  /*
-  const [comments, setComments] = useState([])
-  
-  const fetchComments = useCallback(async () => {
-    const URL = `http://localhost:4001/posts/${postId}/comments`
-    try {
-      const response = await axios.get(URL);
-      setComments(response.data);
-    } catch (error) {
-      console.error('Error fetching comments:', error);
-    }
-  }, [postId])
-
-  useEffect(() => {
-    fetchComments()
-  }, [fetchComments]);
-  */
   const renderComments = comments.map((comment) => {
     let commentContent = ''
     const { status, commentId, content } = comment
