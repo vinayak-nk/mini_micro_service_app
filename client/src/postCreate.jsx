@@ -5,7 +5,7 @@ import axios from "axios";
 import './App.css'
 const CommentsCreate = () => {
   const [title, setTitle] = useState('')
-  const domain = 'post.com'
+  const domain = 'posts.com'
 
   const onSubmit = async (event) => {
     event.preventDefault()

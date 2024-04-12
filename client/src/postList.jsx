@@ -5,7 +5,7 @@ import CommentsList from './commentsList';
 
 function PostList() {
   const [posts, setPosts] = useState([])
-  const domain = 'post.com'
+  const domain = 'posts.com'
   
   const fetchPosts = async () => {
     const URL = `http://${domain}/posts`
