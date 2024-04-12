@@ -37,6 +37,6 @@ app.post('/events', (req, res) => {
 const PORT = 4000
 const IP = '0.0.0.0'
 app.listen(PORT, () => {
-  console.log('v2.0')
+  console.log('v3.0')
   console.log(`Listening to port ${PORT}`)
 })
