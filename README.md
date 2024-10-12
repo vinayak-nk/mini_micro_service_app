@@ -10,3 +10,7 @@ PORT - SERVICES
 
 
 Client => Post/Comments/Query => Event_Bus => Post/Comments/Query => Client
+
+Comments are moderated by moderations service.
+
+Run all the 6 services to see things in actions and flow.
