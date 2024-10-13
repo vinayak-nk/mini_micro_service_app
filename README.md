@@ -25,17 +25,38 @@ k apply -f {filename}.yaml
 k rollout restart deployments posts-deploy
 
 
-ingress-nginx
+# ingress-nginx
 ----------------
 https://kubernetes.github.io/ingress-nginx/deploy/
+```
+Check port 80 -> powershell as admin -> netstat -anb -> scroll to the top and check.
 
-To add localhost url
---------------------
-Windows -> C:\Windows\System32\drivers\etc
-Linus -> /etc/hosts
+  Active Connections
+
+    Proto  Local Address          Foreign Address        State
+    TCP    0.0.0.0:80             0.0.0.0:0              LISTENING
+  [com.docker.backend.exe]
+```
+
+#  To add localhost url
+```
+  --------------------
+  Windows -> C:\Windows\System32\drivers\etc -> hosts file
+  Linus -> /etc/hosts
+
+  127.0.0.1 posts.com
+  127.0.0.1 ticketing.dev
+
+```
+
+# SKAFFOLD
+  https://chocolatey.org/install
+  https://skaffold.dev/docs/install/
+
+  > skaffold fix -> to upgrade skafold config
+
+  > skaffold dev
 
 
-SKAFFOLD
------------
-https://chocolatey.org/install
-https://skaffold.dev/docs/install/
+# port - node port
+# targetPort - pod port

@@ -4,10 +4,12 @@ metadata:
   name: posts-srv
 spec:
   type: NodePort
-  selector:
+  selector: #expose posts pod to outside of k8s cluster
     app: posts
   ports:
     - name: posts
       protocol: TCP
-      port: 4000
+      port: 4000 # this port is used in posts index.js file
       targetPort: 4000
+# port - node port
+# targetPort - pod port

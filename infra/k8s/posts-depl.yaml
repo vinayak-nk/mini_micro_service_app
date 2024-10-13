@@ -2,8 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: posts-depl
-spec:
-  replicas: 1
+spec: # pod specifications; selector and template work together to get a pod.
+  replicas: 1 # The number of pods.
   selector:
     matchLabels:
       app: posts
@@ -14,6 +14,8 @@ spec:
     spec:
       containers:
         - name: posts
+          # image: vinaayak/posts:0.0.1
+          # image: vinaayak/posts:latest
           image: vinaayak/posts
 ---
 apiVersion: v1
@@ -23,10 +25,9 @@ metadata:
 spec:
   selector:
     app: posts
-  # type: ClusterIP / default 
+  # type: ClusterIP / default
   ports:
     - name: posts
       protocol: TCP
       port: 4000
       targetPort: 4000
-
